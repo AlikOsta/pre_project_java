@@ -6,6 +6,7 @@ public class ProductoManager {
 
     public void addProducto(String nombre, double precio, int cantidadEnStock){
         Producto producto = new Producto(nombre, precio, cantidadEnStock);
+        
         catalog.add(producto);
     }
 
@@ -23,12 +24,13 @@ public class ProductoManager {
     }
 
     public void getProductos(){
-        for (int i = 0; i < catalog.size(); i++) {
-            int id = i + 1;    
-            System.out.println("#" + id + " " + catalog.get(i));
+        if (catalog.size() < 1) {
+            System.out.println("Список продуктов пуст.");
+        } else {
+            for (int i = 0; i < catalog.size(); i++) {
+                int id = i + 1;   
+                System.out.println("#" + id + " " + catalog.get(i));
+            }
         }
     }
-
-
-    
 }

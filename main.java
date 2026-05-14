@@ -1,19 +1,47 @@
-import java.util.ArrayList;
+
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args){
 
         ProductoManager manager = new ProductoManager();
-        manager.addProducto("te", 10.0,  0);
-        manager.addProducto("te1", 10.0,  50);
-        manager.addProducto("te2", 10.0,  60);
-        manager.getProductos();
+        Scanner scanner = new Scanner(System.in);
 
-        manager.remProducto(1);
+        while (true) {
+            System.out.println("\n--- Меню ---");
+            System.out.println("1. Добавить товар");
+            System.out.println("2. Удалить товар");
+            System.out.println("3. Показать все товары");
+            System.out.println("4. Выход");
+            System.out.print("Выберите пункт: ");
 
-        manager.getProductos();
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-
+            switch (choice) {
+                case 1:
+                    System.out.print("Введите название товара: ");
+                    String nombre = scanner.nextLine();
+                    System.out.print("Введите цену товара: ");
+                    double precio = scanner.nextDouble();
+                    System.out.print("Введите количество товара на складе: ");
+                    int cantidadEnStock = scanner.nextInt();
+                    manager.addProducto(nombre, precio, cantidadEnStock);
+                    break;
+                case 2:
+                    System.out.print("Введите номер товара для удаления: ");
+                    int numProdDel = scanner.nextInt();
+                    manager.remProducto(numProdDel);
+                    break;
+                case 3:
+                    manager.getProductos();
+                    break;
+                case 4:
+                    System.out.println("Выход из программы.");
+                    return;
+                default:
+                    System.out.println("Неверный пункт меню.");
+            }
+        }
     }
-    
 }
