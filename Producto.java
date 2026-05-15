@@ -12,7 +12,7 @@ public class Producto {
     
     @Override
     public String toString() {
-        return "Товар: " + nombre + ", Цена: " + precio + " руб., Остаток: " + cantidadEnStock;
+        return "Nombre: " + nombre + ", Precio: " + precio + " ARS., Cantidad en stock: " + cantidadEnStock;
     }
 }
 

@@ -12,20 +12,20 @@ public class ProductoManager {
 
     public int remProducto(int id){
         if (catalog.size() < 1) {
-            System.out.println("Список продуктов ПУСТ.");
+            System.out.println("La lista de productos está VACÍA.");
             return 0;
         }
 
         String prod = catalog.get(id - 1).nombre;
         catalog.remove(id - 1);
 
-        System.out.println(prod + " Удален");
+        System.out.println(prod + " Eliminado.");
         return 1;
     }
 
     public void getProductos(){
         if (catalog.size() < 1) {
-            System.out.println("Список продуктов пуст.");
+            System.out.println("La lista de productos está VACÍA.");
         } else {
             for (int i = 0; i < catalog.size(); i++) {
                 int id = i + 1;   

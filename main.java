@@ -8,28 +8,28 @@ public class main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n--- Меню ---");
-            System.out.println("1. Добавить товар");
-            System.out.println("2. Удалить товар");
-            System.out.println("3. Показать все товары");
-            System.out.println("4. Выход");
-            System.out.print("Выберите пункт: ");
+            System.out.println("\n--- Menú ---");
+            System.out.println("1. Añadir un producto");
+            System.out.println("2. Eliminar producto");
+            System.out.println("3. Mostrar todos los productos");
+            System.out.println("4. Salir");
+            System.out.print("Selecciona un artículo: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Введите название товара: ");
+                    System.out.print("ВIntroduce el nombre del producto: ");
                     String nombre = scanner.nextLine();
-                    System.out.print("Введите цену товара: ");
+                    System.out.print("Introduce el precio del artículo: ");
                     double precio = scanner.nextDouble();
-                    System.out.print("Введите количество товара на складе: ");
+                    System.out.print("Introduzca la cantidad de producto en stock: ");
                     int cantidadEnStock = scanner.nextInt();
                     manager.addProducto(nombre, precio, cantidadEnStock);
                     break;
                 case 2:
-                    System.out.print("Введите номер товара для удаления: ");
+                    System.out.print("Introduce el número de artículo para eliminar: ");
                     int numProdDel = scanner.nextInt();
                     manager.remProducto(numProdDel);
                     break;
@@ -37,10 +37,10 @@ public class main {
                     manager.getProductos();
                     break;
                 case 4:
-                    System.out.println("Выход из программы.");
+                    System.out.println("Dejar el programa.");
                     return;
                 default:
-                    System.out.println("Неверный пункт меню.");
+                    System.out.println("Elemento de menú inválido.");
             }
         }
     }
